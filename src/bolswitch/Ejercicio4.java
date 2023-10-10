@@ -76,5 +76,8 @@ public class Ejercicio4 {
 		
 		// Mostramos la suma
 		System.out.println("Suma de las dos tiradas: " + (tirada1 + tirada2));
+		
+		// Cerramos el escaner
+		sc.close();
 	}
 }

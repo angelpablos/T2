@@ -42,6 +42,9 @@ public class Ejercicio5 {
 				break;
 			}
 		}
+		
+		// Cerramos el escaner
+		sc.close();
 	}
 
 }
