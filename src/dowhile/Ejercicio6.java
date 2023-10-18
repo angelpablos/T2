@@ -46,30 +46,17 @@ public class Ejercicio6 {
 			// Calculamos resultado
 			if (jugador1.equals(jugador2)) {
 				System.out.println("EMPATE");
-			} else if (jugador1.equals("PIEDRA")) {
-				if (jugador2.equals("PAPEL")) {
-					System.out.println("Gana el jugador 2");
-				} else if (jugador2.equals("TIJERA")) {
-					System.out.println("Gana el jugador 1");
-				}
-			} else if (jugador1.equals("PAPEL")) {
-				if (jugador2 .equals("TIJERA")) {
-					System.out.println("Gana el jugador 2");
-				} else if (jugador2.equals("PIEDRA")) {
-					System.out.println("Gana el jugador 1");
-				}
-			} else if (jugador1.equals("TIJERA")) {
-				if (jugador2.equals("PIEDRA")) {
-					System.out.println("Gana el jugador 2");
-				} else if (jugador2.equals("PAPEL")) {
-					System.out.println("Gana el jugador 1");
-				}
-			}
+			} else if (jugador1.equals("PIEDRA") && jugador2.equals("TIJERA") || jugador1.equals("TIJERA") && jugador2.equals("PAPEL") || jugador1.equals("PAPEL") && jugador2.equals("PIEDRA"))
+				System.out.println("Gana el jugador 1");
+			else
+				System.out.println("Gana el jugador 2");
 			
 			// Preguntamos si se quiere volver a jugar
 			System.out.println("Deseas seguir jugando? (S) para si");
 			confirmacion = sc.next();
 		} while (confirmacion.equals("S"));
+		
+		System.out.println("Ha terminado el juego");
 		
 		// Cerramos escaner
 		sc.close();
