@@ -1,31 +1,36 @@
 package dowhile;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
 		// Inicializamos variables
-		int guess;
-		int num = (int) Math.floor(Math.random() * 100);
+		int minGuess = 1, maxGuess = 101;
+		String respuesta = "";
 		
 		// Creamos el escaner
 		Scanner sc = new Scanner(System.in);
+		Random r = new Random();
 		
 		// Pedimos el intento
 		do {
-			System.out.println("Intenta introducir el numero: ");
-			guess = sc.nextInt();
+			int random = r.nextInt(minGuess, maxGuess);
 			
-			if (guess > num)
-				System.out.println("MAYOR");
-			else if (guess < num)
-				System.out.println("MENOR");
+			System.out.println("El ordenador dice el numero " + random);
+			
+			respuesta = sc.next();
+			if (respuesta.equalsIgnoreCase("menor")) {
+				maxGuess = random;
+			} else if (respuesta.equalsIgnoreCase("mayor")) {
+				minGuess = random;
+			}
 		} 
-		while(guess != num);
+		while(!respuesta.equalsIgnoreCase("adivinaste"));
 		
 		// Al salir imprimos que ha adivinado
-		System.out.println("Has adivinado el numero");
+		System.out.println("El ordenador ha adivinado el numero");
 		
 		// Cerramos el escaner
 		sc.close();
